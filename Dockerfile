@@ -3,5 +3,7 @@ RUN yum install -y --setopt=tsflags=nodocs httpd composer-cli nodejs php wget gi
 ADD run-httpd.sh /run-httpd.sh
 RUN chmod -v +x /run-httpd.sh
 CMD ["/run-httpd.sh"]
-RUN npm config set registry https://artifactory-principale.enedis.fr/artifactory/api/npm/proxy-npm-npmjs/ && composer install && npm install && npm run production
-
+RUN npm config set registry https://artifactory-principale.enedis.fr/artifactory/api/npm/proxy-npm-npmjs/ 
+RUN composer install 
+RUN npm install 
+RUN npm run production
