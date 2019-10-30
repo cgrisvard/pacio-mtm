@@ -5,6 +5,5 @@ RUN chmod -v +x /run-httpd.sh
 CMD ["/run-httpd.sh"]
 RUN npm config set registry https://artifactory-principale.enedis.fr/artifactory/api/npm/proxy-npm-npmjs/
 WORKDIR /www
-RUN php composer.phar update
 RUN npm install 
 RUN npm run production
